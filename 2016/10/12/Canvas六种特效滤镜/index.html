@@ -51,7 +51,7 @@ JavaScript可调用的API文件gloomyfishfilter.js。支持的特效滤镜分别
 
 ####滤镜原理解释：">
 <meta property="og:image" content="http://img.blog.csdn.net/20130628132241078?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvamlhMjAwMDM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
-<meta property="og:updated_time" content="2016-11-12T07:06:02.000Z">
+<meta property="og:updated_time" content="2016-11-12T07:47:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Canvas六种特效滤镜">
 <meta name="twitter:description" content="#纯JavaScript实现HTML5 Canvas六种特效滤镜
@@ -444,8 +444,8 @@ var canvasData = tempContext.getImageData(0, 0, canvas.width, canvas.height);
 
    // Copying back canvas data to canvas  
    tempContext.putImageData(canvasData, 0, 0);  
-}  
-</code></pre><p>###滤镜源代码(gloomyfishfilter.js)：<br>    var gfilter = {<br>    type: “canvas”,<br>    name: “filters”,<br>    author: “zhigang”,<br>    getInfo: function () {<br>        return this.author + ‘ ‘ + this.type + ‘ ‘ + this.name;<br>    },  </p>
+} 
+</code></pre><p>###滤镜源代码(gloomyfishfilter.js)：<br>        var gfilter = {<br>        type: “canvas”,<br>        name: “filters”,<br>        author: “zhigang”,<br>        getInfo: function () {<br>        return this.author + ‘ ‘ + this.type + ‘ ‘ + this.name;<br>        },  </p>
 <pre><code>/** 
  * invert color value of pixel, new pixel = RGB(255-r, 255-g, 255 - b) 
  *  
