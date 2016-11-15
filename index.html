@@ -137,6 +137,235 @@
       <div class="body-wrap">
         
   
+    <article id="post-FullPage-js" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title: FullPage.js<br>date: 2016-8-15 16:25:21</p>
+<p>#FullPage.js</p>
+<p>七牛最近改版了网站，弄成全屏滚动的特效，真的很炫，于是查看其源代码，发现了一个fullPage.js插件，于是百度了一下，还就是这个插件的作用，其实有很多网站都做了全屏滚动的特效，效果也很好看，今天就给大家说说fullPage.js的使用方法和设置。</p>
+<p><img src="http://www.uedsc.com/wp-content/uploads/2014/06/77.png" alt="Mou"></p>
+<p>##简介</p>
+<p>fullPage.js是一个基于jQuery的全屏滚动插件，它能够很方便、很轻松的制作出全屏网站。</p>
+<p>##主要功能</p>
+<ul>
+<li>支持鼠标滚动</li>
+</ul>
+<ul>
+<li>支持前进后退和键盘控制</li>
+</ul>
+<ul>
+<li>多个回调函数</li>
+</ul>
+<ul>
+<li>支持手机、平板触摸事件</li>
+</ul>
+<ul>
+<li>支持 CSS3 动画</li>
+</ul>
+<ul>
+<li>支持窗口缩放</li>
+</ul>
+<ul>
+<li>窗口缩放时自动调整</li>
+</ul>
+<ul>
+<li>可设置滚动宽度、背景颜色、滚动速度、循环选项、回调、文本对齐方式等等</li>
+</ul>
+<p>##兼容性</p>
+<p>fullPage.js 支持 IE8+ 及其他现代浏览器。</p>
+<p>###使用方法</p>
+<p>#####1、引入文件</p>
+<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/jquery.fullPage.css&quot;&gt;
+&lt;script src=&quot;js/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jquery-ui.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jquery.fullPage.js&quot;&gt;&lt;/script&gt;
+</code></pre><p>####2、HTML</p>
+<pre><code>&lt;div id=&quot;fullpage&quot;&gt;
+&lt;div class=&quot;section&quot;&gt;第一屏&lt;/div&gt;
+&lt;div class=&quot;section&quot;&gt;第二屏&lt;/div&gt;
+&lt;div class=&quot;section&quot;&gt;
+    &lt;div class=&quot;slide&quot;&gt;第三屏的第一屏&lt;/div&gt;
+    &lt;div class=&quot;slide&quot;&gt;第三屏的第二屏&lt;/div&gt;
+    &lt;div class=&quot;slide&quot;&gt;第三屏的第三屏&lt;/div&gt;
+    &lt;div class=&quot;slide&quot;&gt;第三屏的第四屏&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;section&quot;&gt;第四屏&lt;/div&gt;
+&lt;/div&gt;
+</code></pre><p>####3、JavaScript</p>
+<pre><code>$(function(){
+$(&apos;#fullpage&apos;).fullpage({
+    &apos;verticalCentered&apos;: false,
+    &apos;css3&apos;: true,
+    &apos;sectionsColor&apos;: [&apos;#254875&apos;, &apos;#00FF00&apos;, &apos;#254587&apos;, &apos;#695684&apos;],
+    anchors: [&apos;page1&apos;, &apos;page2&apos;, &apos;page3&apos;, &apos;page4&apos;],
+    &apos;navigation&apos;: true,
+    &apos;navigationPosition&apos;: &apos;right&apos;,
+    &apos;navigationTooltips&apos;: [&apos;fullPage.js&apos;, &apos;Powerful&apos;, &apos;Amazing&apos;, &apos;Simple&apos;]
+})
+})
+</code></pre><p>经测试最好至少有 anchors 这个参数，否则在火狐浏览器中，第一次滚动会直接滚到底部，点击这里查看上面代码的示例：<a href="http://www.uedsc.com/wp-content/uploads/2015/02/fullpage-demo/" target="_blank" rel="external">@A Fullpage简单示例。</a></p>
+<p>##可选配置</p>
+<p>####1、选项</p>
+<pre><code>选项            类型            默认值            说明
+
+verticalCentered    字符串    true    内容是否垂直居中
+
+resize    布尔值    false    字体是否随着窗口缩放而缩放
+
+slidesColor    函数    无    设置背景颜色
+
+anchors    数组    无    定义锚链接
+
+scrollingSpeed    整数    700    滚动速度，单位为毫秒
+
+easing    字符串    easeInQuart    滚动动画方式
+
+menu    布尔值    false    绑定菜单，设定的相关属性与 anchors 的值对应后，菜单可以控制滚动
+
+navigation    布尔值    false    是否显示项目导航
+
+navigationPosition    字符串    right    项目导航的位置，可选 left 或 right
+
+navigationColor    字符串    #000    项目导航的颜色
+
+navigationTooltips    数组    空    项目导航的 tip
+
+slidesNavigation    布尔值    false    是否显示左右滑块的项目导航
+
+slidesNavPosition    字符串    bottom    左右滑块的项目导航的位置，可选 top 或 bottom
+
+controlArrowColor    字符串    #fff    左右滑块的箭头的背景颜色
+
+loopBottom    布尔值    false    滚动到最底部后是否滚回顶部
+
+loopTop    布尔值    false    滚动到最顶部后是否滚底部
+
+loopHorizontal    布尔值    true    左右滑块是否循环滑动
+
+autoScrolling    布尔值    true    是否使用插件的滚动方式，如果选择 false，则会出现浏览器自        带的滚动条
+scrollOverflow    布尔值    false    内容超过满屏后是否显示滚动条
+
+css3    布尔值    false    是否使用 CSS3 transforms 滚动
+
+paddingTop    字符串    0    与顶部的距离
+
+paddingBottom    字符串    0    与底部距离
+
+fixedElements    字符串    无    
+
+normalScrollElements        无    
+
+keyboardScrolling    布尔值    true    是否使用键盘方向键导航
+
+touchSensitivity    整数    5    
+
+continuousVertical    布尔值    false    是否循环滚动，与 loopTop 及 loopBottom 不兼容
+
+animateAnchor    布尔值    true    
+
+normalScrollElementTouchThreshold    整数    5    
+</code></pre><p>####2、方法</p>
+<pre><code>名称                            说明
+
+moveSectionUp()                向上滚动
+
+moveSectionDown()            向下滚动
+
+moveTo(section, slide)        滚动到
+
+moveSlideRight()            slide 向右滚动
+
+moveSlideLeft()                slide 向左滚动
+
+setAutoScrolling()            设置页面滚动方式，设置为 true 时自动滚动
+
+setAllowScrolling()            添加或删除鼠标滚轮/触控板控制
+
+setKeyboardScrolling()        添加或删除键盘方向键控制
+
+setScrollingSpeed()            定义以毫秒为单位的滚动速度
+</code></pre><p>###3、回调函数<br>    名称                        说明</p>
+<pre><code>afterLoad            滚动到某一屏后的回调函数，接收 anchorLink 和 index 两个参数
+
+                        anchorLink是锚链接的名称，index 是序号，从1开始计算
+
+onLeave                滚动前的回调函数，接收 index、nextIndex 和 direction 3个参数：
+
+index                 是离开的“页面”的序号，从1开始计算；
+
+nextIndex            是滚动到的“页面”的序号，从1开始计算；
+
+direction             判断往上滚动还是往下滚动，值是 up 或 down。
+
+afterRender            页面结构生成后的回调函数，或者说页面初始化完成后的回调函数
+
+afterSlideLoad        滚动到某一水平滑块后的回调函数，与 afterLoad 类似，接收anchorLink、
+                    index、slideIndex、direction 4个参数
+
+onSlideLeave        某一水平滑块滚动前的回调函数，与 onLeave 类似，接anchorLinkindex、
+                    slideIndex、direction 4个参数
+</code></pre><p>##自定义Section高度</p>
+<p>很多用户留言说无法自定义底部Footer的高度，我 也查阅了很多资料，都没有发现方法，但是无意间看到一个Fullpage的示例，实现自定义底部高度的方法，而且是不算在滑动的Section里面，在需 要自定义高度的DIV里面，只需要给Section添加.fp-auto-height类就可以实现自定义高度。</p>
+<p>###相关链接</p>
+<ul>
+<li><p>官网地址：<a href="http://www.expressjs.com.cn/" target="_blank" rel="external">@A http://www.expressjs.com.cn/</a></p>
+<p>jQuery无法加载导致页面失效</p>
+</li>
+<li><p>问说网Fullpage官网离线版：<a href="fullPage.js 官网">@A fullPage.js 官网</a></p>
+</li>
+<li><p>GitHub 地址：<a href="https://github.com/alvarotrigo/fullPage.js" target="_blank" rel="external">@A https://github.com/alvarotrigo/fullPage.js</a></p>
+</li>
+<li><p>问说网下载地址：<a href="http://static.uedsc.com/fullPage.js-master.zip" target="_blank" rel="external">@A http://static.uedsc.com/fullPage.js-master.zip</a><br>这个不是最版本，可能有些细节无法实现，请前往Fullpage的Github地址下载最新版本。</p>
+</li>
+</ul>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/11/15/FullPage-js/" class="archive-article-date">
+  	<time datetime="2016-11-15T09:25:21.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-15</time>
+</a>
+      
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+<!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-FullPage-js" data-title="" data-url="undefined"></div>
+
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"qianjenbo"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+
+  
     <article id="post-Express" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
