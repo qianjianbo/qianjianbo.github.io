@@ -143,25 +143,29 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/11/15/Vue-js/">Vue.js</a>
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
-<p>title: Vue.js<br>date: 2016-11-15 19:26:49</p>
-<p>#介绍(一)</p>
-<p>##Vue.js 是什么</p>
-<hr>
+        <h1 id="介绍-一"><a href="#介绍-一" class="headerlink" title="介绍(一)"></a>介绍(一)</h1><h2 id="Vue-js-是什么"><a href="#Vue-js-是什么" class="headerlink" title="Vue.js 是什么"></a>Vue.js 是什么</h2><hr>
 <p>Vue.js（读音 /vjuː/, 类似于 view） 是一套构建用户界面的 渐进式框架。与其他重量级框架不同的是，Vue </p>
 <p>采用自底向上增量开发的设计。Vue 的核心库只关注视图层，并且非常容易学习，非常容易与其它库或已有项目整</p>
 <p>合。另一方面，Vue 完全有能力驱动采用单文件组件和Vue生态系统支持的库开发的复杂单页应用。</p>
 <p>Vue.js 的目标是通过尽可能简单的 API 实现响应的数据绑定和组合的视图组件。</p>
 <p>如果你是有经验的前端开发者，想知道 Vue.js 与其它库/框架的区别，查看对比其它框架。</p>
-<p>##起步</p>
-<pre><code>官方指南假设你已有HTML、CSS和JavaScript中级前端知识。如果你是全新的前端开发者，它可能不是最好    的想法，将一个框架作为你的第一步-最好掌握基本知识再来！其他框架以前的经验是有帮助的，但不是必需    的。
+<h2 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h2><pre><code>官方指南假设你已有HTML、CSS和JavaScript中级前端知识。如果你是全新的前端开发者，它可能不是最好    的想法，将一个框架作为你的第一步-最好掌握基本知识再来！其他框架以前的经验是有帮助的，但不是必需    的。
 </code></pre><p>尝试 Vue.js 最简单的方法是使用 <a href="https://jsfiddle.net/chrisvfritz/50wL7mdz/" target="_blank" rel="external">JSFiddle Hello World</a> 例子。你可以在浏览器新标签页中打开它，跟着我们学习一些基础示例。或者你也可以创建一个本地的 .html 文件，然后引入 Vue:</p>
 <pre><code>&lt;script src=&quot;https://unpkg.com/vue/dist/vue.js&quot;&gt;
 </code></pre><p>你可以查看<a href="http://cn.vuejs.org/v2/guide/installation.html" target="_blank" rel="external">安装指南</a>来了解其他安装 Vue 的选项。请注意我们不推荐新手直接使用 vue-cli，尤其是对 Node.js 构建工具不够了解的同学。</p>
-<p>##声明式渲染</p>
-<hr>
+<h2 id="声明式渲染"><a href="#声明式渲染" class="headerlink" title="声明式渲染"></a>声明式渲染</h2><hr>
 <p>Vue.js 的核心是一个允许你采用简洁的模板语法来声明式的将数据渲染进 DOM 的系统：</p>
 <pre><code>&lt;div id=&quot;app&quot;&gt;
   {{ message }}
@@ -189,8 +193,7 @@ message: &apos;You loaded this page on &apos; + new Date()
 </code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hover your mouse over me for a few seconds to see my dynamically bound title!</div></pre></td></tr></table></figure>
 <p>这里我们遇到点新东西。你看到的 <code>v-bind</code> 属性被称为指令。指令带有前缀 <code>v-</code>，以表示它们是 Vue.js 提供的特殊属性。可能你已经猜到了，它们会在渲染过的 DOM 上应用特殊的响应式行为。这个指令的简单含义是说：将这个元素节点的 <code>title</code>属性和 Vue 实例的 <code>message</code> 属性绑定到一起。</p>
 <p>你再次打开浏览器的控制台输入 <code>app2.message = &#39;some new message&#39;</code>，你就会再一次看到这个绑定了<code>title</code>属性的HTML已经进行了更新。</p>
-<p>##条件与循环</p>
-<hr>
+<h2 id="条件与循环"><a href="#条件与循环" class="headerlink" title="条件与循环"></a>条件与循环</h2><hr>
 <p>控制切换一个元素的显示也相当简单：</p>
 <pre><code>&lt;div id=&quot;app-3&quot;&gt;
   &lt;p v-if=&quot;seen&quot;&gt;Now you see me&lt;/p&gt;
@@ -224,8 +227,7 @@ seen: true
     })
 </code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Learn JavaScript</div><div class="line">Learn Vue</div><div class="line">Build something awesome</div></pre></td></tr></table></figure>
 <p>在控制台里，输入 <code>app4.todos.push({ text: &#39;New item&#39; })</code>。你会发现列表中多了一栏新内容。</p>
-<p>##处理用户输入</p>
-<hr>
+<h2 id="处理用户输入"><a href="#处理用户输入" class="headerlink" title="处理用户输入"></a>处理用户输入</h2><hr>
 <p>为了让用户和你的应用进行互动，我们可以用 v-on 指令绑定一个监听事件用于调用我们 Vue 实例中定义的方法：</p>
 <pre><code>&lt;div id=&quot;app-5&quot;&gt;
   &lt;p&gt;{{ message }}&lt;/p&gt;
@@ -256,8 +258,7 @@ var app6 = new Vue({
   }
 })
 </code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Hello Vue!</div><div class="line"></div><div class="line">Hello Vue!</div></pre></td></tr></table></figure>
-<p>##用组件构建（应用）</p>
-<hr>
+<h2 id="用组件构建（应用）"><a href="#用组件构建（应用）" class="headerlink" title="用组件构建（应用）"></a>用组件构建（应用）</h2><hr>
 <p>组件系统是 Vue.js 另一个重要概念，因为它提供了一种抽象，让我们可以用独立可复用的小组件来构建大型应用。如果我们考虑到这点，几乎任意类型的应用的界面都可以抽象为一个组件树：<br><img src="http://cn.vuejs.org/images/components.png" alt="Mou"></p>
 <p>在 Vue 里，一个组件实质上是一个拥有预定义选项的一个 Vue 实例：</p>
 <pre><code>// Define a new component called todo-item
@@ -311,16 +312,13 @@ groceryList: [
 &lt;app-content&gt;&lt;/app-content&gt;
   &lt;/app-view&gt;
 &lt;/div&gt;
-</code></pre><p>##与自定义元素的关系</p>
-<hr>
+</code></pre><h2 id="与自定义元素的关系"><a href="#与自定义元素的关系" class="headerlink" title="与自定义元素的关系"></a>与自定义元素的关系</h2><hr>
 <p>你可能已经注意到 Vue.js 组件非常类似于自定义元素——它是<code>Web 组件规范</code>的一部分。实际上 Vue.js 的组件语法参考了该规范。例如 Vue 组件实现了 <code>Slot API</code> 与<code>is</code> 特性。但是，有几个关键的不同：</p>
 <p>1.Web 组件规范仍然远未完成，并且没有浏览器实现。相比之下，Vue.js 组件不需要任何补丁，并且在所有支持的浏览器（IE9 及更高版本）之下表现一致。必要时，Vue.js 组件也可以放在原生自定义元素之内。</p>
 <p>2.Vue.js 组件提供了原生自定义元素所不具备的一些重要功能，比如组件间的数据流，自定义事件系统，以及动态的、带特效的组件替换。</p>
-<p>##准备好探索更广阔的世界了？</p>
-<hr>
+<h2 id="准备好探索更广阔的世界了？"><a href="#准备好探索更广阔的世界了？" class="headerlink" title="准备好探索更广阔的世界了？"></a>准备好探索更广阔的世界了？</h2><hr>
 <p>我们刚才简单介绍了 Vue.js 核心的一些最基本的特征 - 本指南的其余部分将用更详尽的篇幅去描述其他的一些高级特性，所以一定要阅读完所有的内容哦！</p>
-<p>####原文：<a href="http://vuejs.org/guide/index.html" target="_blank" rel="external">http://vuejs.org/guide/index.html</a></p>
-
+<h4 id="原文：http-vuejs-org-guide-index-html"><a href="#原文：http-vuejs-org-guide-index-html" class="headerlink" title="原文：http://vuejs.org/guide/index.html"></a>原文：<a href="http://vuejs.org/guide/index.html" target="_blank" rel="external">http://vuejs.org/guide/index.html</a></h4>
       
     </div>
     <div class="article-info article-info-index">
@@ -344,7 +342,7 @@ groceryList: [
 
 
 <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="post-Vue-js" data-title="" data-url="undefined"></div>
+    <div class="ds-thread" data-thread-key="post-Vue-js" data-title="Vue.js" data-url="undefined"></div>
 
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
@@ -371,14 +369,10 @@ var duoshuoQuery = {short_name:"qianjenbo"};
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
-<p>title: FullPage.js<br>date: 2016-8-15 16:25:21</p>
-<p>#FullPage.js</p>
-<p>七牛最近改版了网站，弄成全屏滚动的特效，真的很炫，于是查看其源代码，发现了一个fullPage.js插件，于是百度了一下，还就是这个插件的作用，其实有很多网站都做了全屏滚动的特效，效果也很好看，今天就给大家说说fullPage.js的使用方法和设置。</p>
+<h1 id="FullPage-js"><a href="#FullPage-js" class="headerlink" title="FullPage.js"></a>FullPage.js</h1><p>七牛最近改版了网站，弄成全屏滚动的特效，真的很炫，于是查看其源代码，发现了一个fullPage.js插件，于是百度了一下，还就是这个插件的作用，其实有很多网站都做了全屏滚动的特效，效果也很好看，今天就给大家说说fullPage.js的使用方法和设置。</p>
 <p><img src="http://www.uedsc.com/wp-content/uploads/2014/06/77.png" alt="Mou"></p>
-<p>##简介</p>
-<p>fullPage.js是一个基于jQuery的全屏滚动插件，它能够很方便、很轻松的制作出全屏网站。</p>
-<p>##主要功能</p>
-<ul>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>fullPage.js是一个基于jQuery的全屏滚动插件，它能够很方便、很轻松的制作出全屏网站。</p>
+<h2 id="主要功能"><a href="#主要功能" class="headerlink" title="主要功能"></a>主要功能</h2><ul>
 <li>支持鼠标滚动</li>
 </ul>
 <ul>
@@ -402,16 +396,12 @@ var duoshuoQuery = {short_name:"qianjenbo"};
 <ul>
 <li>可设置滚动宽度、背景颜色、滚动速度、循环选项、回调、文本对齐方式等等</li>
 </ul>
-<p>##兼容性</p>
-<p>fullPage.js 支持 IE8+ 及其他现代浏览器。</p>
-<p>###使用方法</p>
-<p>#####1、引入文件</p>
-<pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/jquery.fullPage.css&quot;&gt;
+<h2 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h2><p>fullPage.js 支持 IE8+ 及其他现代浏览器。</p>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><h5 id="1、引入文件"><a href="#1、引入文件" class="headerlink" title="1、引入文件"></a>1、引入文件</h5><pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/jquery.fullPage.css&quot;&gt;
 &lt;script src=&quot;js/jquery.min.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;js/jquery-ui.min.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;js/jquery.fullPage.js&quot;&gt;&lt;/script&gt;
-</code></pre><p>####2、HTML</p>
-<pre><code>&lt;div id=&quot;fullpage&quot;&gt;
+</code></pre><h4 id="2、HTML"><a href="#2、HTML" class="headerlink" title="2、HTML"></a>2、HTML</h4><pre><code>&lt;div id=&quot;fullpage&quot;&gt;
 &lt;div class=&quot;section&quot;&gt;第一屏&lt;/div&gt;
 &lt;div class=&quot;section&quot;&gt;第二屏&lt;/div&gt;
 &lt;div class=&quot;section&quot;&gt;
@@ -422,8 +412,7 @@ var duoshuoQuery = {short_name:"qianjenbo"};
 &lt;/div&gt;
 &lt;div class=&quot;section&quot;&gt;第四屏&lt;/div&gt;
 &lt;/div&gt;
-</code></pre><p>####3、JavaScript</p>
-<pre><code>$(function(){
+</code></pre><h4 id="3、JavaScript"><a href="#3、JavaScript" class="headerlink" title="3、JavaScript"></a>3、JavaScript</h4><pre><code>$(function(){
 $(&apos;#fullpage&apos;).fullpage({
     &apos;verticalCentered&apos;: false,
     &apos;css3&apos;: true,
@@ -435,9 +424,7 @@ $(&apos;#fullpage&apos;).fullpage({
 })
 })
 </code></pre><p>经测试最好至少有 anchors 这个参数，否则在火狐浏览器中，第一次滚动会直接滚到底部，点击这里查看上面代码的示例：<a href="http://www.uedsc.com/wp-content/uploads/2015/02/fullpage-demo/" target="_blank" rel="external">@A Fullpage简单示例。</a></p>
-<p>##可选配置</p>
-<p>####1、选项</p>
-<pre><code>选项            类型            默认值            说明
+<h2 id="可选配置"><a href="#可选配置" class="headerlink" title="可选配置"></a>可选配置</h2><h4 id="1、选项"><a href="#1、选项" class="headerlink" title="1、选项"></a>1、选项</h4><pre><code>选项            类型            默认值            说明
 
 verticalCentered    字符串    true    内容是否垂直居中
 
@@ -495,8 +482,7 @@ continuousVertical    布尔值    false    是否循环滚动，与 loopTop 及
 animateAnchor    布尔值    true    
 
 normalScrollElementTouchThreshold    整数    5    
-</code></pre><p>####2、方法</p>
-<pre><code>名称                            说明
+</code></pre><h4 id="2、方法"><a href="#2、方法" class="headerlink" title="2、方法"></a>2、方法</h4><pre><code>名称                            说明
 
 moveSectionUp()                向上滚动
 
@@ -515,8 +501,9 @@ setAllowScrolling()            添加或删除鼠标滚轮/触控板控制
 setKeyboardScrolling()        添加或删除键盘方向键控制
 
 setScrollingSpeed()            定义以毫秒为单位的滚动速度
-</code></pre><p>###3、回调函数<br>    名称                        说明</p>
-<pre><code>afterLoad            滚动到某一屏后的回调函数，接收 anchorLink 和 index 两个参数
+</code></pre><h3 id="3、回调函数"><a href="#3、回调函数" class="headerlink" title="3、回调函数"></a>3、回调函数</h3><pre><code>名称                        说明
+
+afterLoad            滚动到某一屏后的回调函数，接收 anchorLink 和 index 两个参数
 
                         anchorLink是锚链接的名称，index 是序号，从1开始计算
 
@@ -535,10 +522,8 @@ afterSlideLoad        滚动到某一水平滑块后的回调函数，与 afterL
 
 onSlideLeave        某一水平滑块滚动前的回调函数，与 onLeave 类似，接anchorLinkindex、
                     slideIndex、direction 4个参数
-</code></pre><p>##自定义Section高度</p>
-<p>很多用户留言说无法自定义底部Footer的高度，我 也查阅了很多资料，都没有发现方法，但是无意间看到一个Fullpage的示例，实现自定义底部高度的方法，而且是不算在滑动的Section里面，在需 要自定义高度的DIV里面，只需要给Section添加.fp-auto-height类就可以实现自定义高度。</p>
-<p>###相关链接</p>
-<ul>
+</code></pre><h2 id="自定义Section高度"><a href="#自定义Section高度" class="headerlink" title="自定义Section高度"></a>自定义Section高度</h2><p>很多用户留言说无法自定义底部Footer的高度，我 也查阅了很多资料，都没有发现方法，但是无意间看到一个Fullpage的示例，实现自定义底部高度的方法，而且是不算在滑动的Section里面，在需 要自定义高度的DIV里面，只需要给Section添加.fp-auto-height类就可以实现自定义高度。</p>
+<h3 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h3><ul>
 <li><p>官网地址：<a href="http://www.expressjs.com.cn/" target="_blank" rel="external">@A http://www.expressjs.com.cn/</a></p>
 <p>jQuery无法加载导致页面失效</p>
 </li>
@@ -600,10 +585,7 @@ var duoshuoQuery = {short_name:"qianjenbo"};
     <div class="article-entry" itemprop="articleBody">
       
         <hr>
-<p>title: Express<br>date: 2016-11-15 14:45:36</p>
-<p>#Express</p>
-<p>##基于 Node.js 平台，快速、开放、极简的 web 开发框架。</p>
-<pre><code>$ npm install express --save
+<h1 id="Express"><a href="#Express" class="headerlink" title="Express"></a>Express</h1><h2 id="基于-Node-js-平台，快速、开放、极简的-web-开发框架。"><a href="#基于-Node-js-平台，快速、开放、极简的-web-开发框架。" class="headerlink" title="基于 Node.js 平台，快速、开放、极简的 web 开发框架。"></a>基于 Node.js 平台，快速、开放、极简的 web 开发框架。</h2><pre><code>$ npm install express --save
 </code></pre><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>首先假定你已经安装了 Node.js，接下来为你的应用创建一个目录，然后进入此目录并将其作为当前工作目录。</p>
 <pre><code>$ mkdir myapp
 $ cd myapp
@@ -616,8 +598,7 @@ $ cd myapp
 <pre><code>$ npm install express --save
 </code></pre><p>如果只是临时安装 Express，不想将它添加到依赖列表中，只需略去 –save 参数即可：</p>
 <pre><code>$ npm install express
-</code></pre><p>###Express网站：<a href="http://www.expressjs.com.cn/" target="_blank" rel="external">@A http://www.expressjs.com.cn/</a></p>
-<p>##Express 应用生成器<br>通过应用生成器工具 express 可以快速创建一个应用的骨架。</p>
+</code></pre><h3 id="Express网站：-A-http-www-expressjs-com-cn"><a href="#Express网站：-A-http-www-expressjs-com-cn" class="headerlink" title="Express网站：@A http://www.expressjs.com.cn/"></a>Express网站：<a href="http://www.expressjs.com.cn/" target="_blank" rel="external">@A http://www.expressjs.com.cn/</a></h3><h2 id="Express-应用生成器"><a href="#Express-应用生成器" class="headerlink" title="Express 应用生成器"></a>Express 应用生成器</h2><p>通过应用生成器工具 express 可以快速创建一个应用的骨架。</p>
 <p>通过如下命令安装：</p>
 <pre><code>$ npm install express-generator -g
 </code></pre><p>-h 选项可以列出所有可用的命令行选项：</p>
@@ -680,7 +661,7 @@ $ npm install
 └── layout.jade
 
 7 directories, 9 files
-</code></pre><p>#一个简单的 Express 路由<br>这篇教程只是对 Express 路由做一个简单的介绍。路由（Routing）是由一个 URI（或者叫路径）和一个特定的 HTTP 方法（GET、POST 等）组成的，涉及到应用如何响应客户端对某个网站节点的访问。</p>
+</code></pre><h1 id="一个简单的-Express-路由"><a href="#一个简单的-Express-路由" class="headerlink" title="一个简单的 Express 路由"></a>一个简单的 Express 路由</h1><p>这篇教程只是对 Express 路由做一个简单的介绍。路由（Routing）是由一个 URI（或者叫路径）和一个特定的 HTTP 方法（GET、POST 等）组成的，涉及到应用如何响应客户端对某个网站节点的访问。</p>
 <p>每一个路由都可以有一个或者多个处理器函数，当匹配到路由时，这个/些函数将被执行。</p>
 <p>路由的定义由如下结构组成：app.METHOD(PATH, HANDLER)。其中，app 是一个 express 实例；METHOD 是某个 HTTP 请求方式中的一个；PATH 是服务器端的路径；HANDLER 是当路由匹配到时需要执行的函数。</p>
 <p>下面的代码展示了几个路由实例：</p>
@@ -703,8 +684,7 @@ app.put(&apos;/user&apos;, function (req, res) {
 app.delete(&apos;/user&apos;, function (req, res) {
   res.send(&apos;Got a DELETE request at /user&apos;);
 });
-</code></pre><p>#Express 常见问题</p>
-<p>我的应用该如何组织？<br>对于这个问题其实没有一个确定的答案。这要根据你的应用的规模和参与开发的团队来确定。为了尽可能灵活，Express 自身是并没有硬性要求应用结构是哪一种的。</p>
+</code></pre><h1 id="Express-常见问题"><a href="#Express-常见问题" class="headerlink" title="Express 常见问题"></a>Express 常见问题</h1><p>我的应用该如何组织？<br>对于这个问题其实没有一个确定的答案。这要根据你的应用的规模和参与开发的团队来确定。为了尽可能灵活，Express 自身是并没有硬性要求应用结构是哪一种的。</p>
 <p>根据你的需求，可以把路由和其他应用相关的业务逻辑存放在任意多个文件和任意目录中。下面推荐的实例或许对你能有一些启发：</p>
 <ul>
 <li>Route listings</li>
@@ -717,21 +697,20 @@ app.delete(&apos;/user&apos;, function (req, res) {
 </ul>
 <p>另外，这里还有一些第三方 Express 扩展简化了这种组织方式：</p>
 <p>Resourceful routing</p>
-<p>###如何定义模型（model）？<br>Express自身并不感知数据库是否存在。数据库功能依赖于第三方 Node 模块提供的接口。</p>
-<p>###如何验证用户？<br>这是另一个 Express 不涉及的领域。你可以使用任何验证方式。对于简单的用户名/密码验证方式，可以参考这个实例。</p>
-<p>###Express 支持哪些模板引擎？<br>Express 支持任何符合 (path, locals, callback) 接口规范的模板引擎。 为了统一模板引擎的接口和缓存功能，请参考 consolidate.js 项目。其他未提及的模板引擎也可能支持 Express 接口规范。</p>
-<p>###如何处理 404 ？<br>在 Express 中，404 并不是一个错误（error）。因此，错误处理器中间件并不捕获 404。这是因为 404 只是意味着某些功能没有实现。也就是说，Express 执行了所有中间件、路由之后还是没有获取到任何输出。你所需要做的就是在其所有他中间件的后面添加一个处理 404 的中间件。如下：</p>
+<h3 id="如何定义模型（model）？"><a href="#如何定义模型（model）？" class="headerlink" title="如何定义模型（model）？"></a>如何定义模型（model）？</h3><p>Express自身并不感知数据库是否存在。数据库功能依赖于第三方 Node 模块提供的接口。</p>
+<h3 id="如何验证用户？"><a href="#如何验证用户？" class="headerlink" title="如何验证用户？"></a>如何验证用户？</h3><p>这是另一个 Express 不涉及的领域。你可以使用任何验证方式。对于简单的用户名/密码验证方式，可以参考这个实例。</p>
+<h3 id="Express-支持哪些模板引擎？"><a href="#Express-支持哪些模板引擎？" class="headerlink" title="Express 支持哪些模板引擎？"></a>Express 支持哪些模板引擎？</h3><p>Express 支持任何符合 (path, locals, callback) 接口规范的模板引擎。 为了统一模板引擎的接口和缓存功能，请参考 consolidate.js 项目。其他未提及的模板引擎也可能支持 Express 接口规范。</p>
+<h3 id="如何处理-404-？"><a href="#如何处理-404-？" class="headerlink" title="如何处理 404 ？"></a>如何处理 404 ？</h3><p>在 Express 中，404 并不是一个错误（error）。因此，错误处理器中间件并不捕获 404。这是因为 404 只是意味着某些功能没有实现。也就是说，Express 执行了所有中间件、路由之后还是没有获取到任何输出。你所需要做的就是在其所有他中间件的后面添加一个处理 404 的中间件。如下：</p>
 <pre><code>app.use(function(req, res, next) {
   res.status(404).send(&apos;Sorry cant find that!&apos;);
 });
-</code></pre><p>###如何设置一个错误处理器？<br>错误处理器中间件的定义和其他中间件一样，唯一的区别是 4 个而不是 3 个参数，即 (err, req, res, next)：</p>
+</code></pre><h3 id="如何设置一个错误处理器？"><a href="#如何设置一个错误处理器？" class="headerlink" title="如何设置一个错误处理器？"></a>如何设置一个错误处理器？</h3><p>错误处理器中间件的定义和其他中间件一样，唯一的区别是 4 个而不是 3 个参数，即 (err, req, res, next)：</p>
 <pre><code>app.use(function(err, req, res, next) {
   console.error(err.stack);
   res.status(500).send(&apos;Something broke!&apos;);
 });
-</code></pre><p>###如何渲染纯 HTML 文件？<br>不需要！无需通过 res.render() 渲染 HTML。你可以通过 res.sendFile() 直接对外输出 HTML 文件。如果你需要对外提供的资源文件很多，可以使用 express.static() 中间件。</p>
-<p>###Express网站：<a href="http://www.expressjs.com.cn/" target="_blank" rel="external">@A http://www.expressjs.com.cn/</a></p>
-
+</code></pre><h3 id="如何渲染纯-HTML-文件？"><a href="#如何渲染纯-HTML-文件？" class="headerlink" title="如何渲染纯 HTML 文件？"></a>如何渲染纯 HTML 文件？</h3><p>不需要！无需通过 res.render() 渲染 HTML。你可以通过 res.sendFile() 直接对外输出 HTML 文件。如果你需要对外提供的资源文件很多，可以使用 express.static() 中间件。</p>
+<h3 id="Express网站：-A-http-www-expressjs-com-cn-1"><a href="#Express网站：-A-http-www-expressjs-com-cn-1" class="headerlink" title="Express网站：@A http://www.expressjs.com.cn/"></a>Express网站：<a href="http://www.expressjs.com.cn/" target="_blank" rel="external">@A http://www.expressjs.com.cn/</a></h3>
       
     </div>
     <div class="article-info article-info-index">
@@ -781,9 +760,8 @@ var duoshuoQuery = {short_name:"qianjenbo"};
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>layout: flex<br>title: 布局教程：语法篇<br>date: 2016-10-20 15:07:56</p>
-<p>#Flex 布局教程：语法篇</p>
-<p>#####作者： 阮一峰<br>日期： 2015年7月10日</p>
+        <hr>
+<h1 id="Flex-布局教程：语法篇"><a href="#Flex-布局教程：语法篇" class="headerlink" title="Flex 布局教程：语法篇"></a>Flex 布局教程：语法篇</h1><h5 id="作者：-阮一峰"><a href="#作者：-阮一峰" class="headerlink" title="作者： 阮一峰"></a>作者： 阮一峰</h5><p>日期： 2015年7月10日</p>
 <p>网页布局（layout）是CSS的一个重点应用。</p>
 <p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071001.gif" alt="Mou"></p>
 <p>布局的传统解决方案，基于盒状模型，依赖 display属性 + position属性 + float属性。它对于那些特殊布局非常不方便，比如，垂直居中就不容易实现。</p>
@@ -791,35 +769,28 @@ var duoshuoQuery = {short_name:"qianjenbo"};
 <p>2009年，W3C提出了一种新的方案—-Flex布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。</p>
 <p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071003.jpg" alt="Mou"></p>
 <p>Flex布局将成为未来布局的首选方案。本文介绍它的语法，下一篇文章给出常见布局的Flex写法。<br>以下内容主要参考了下面两篇文章：<a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="external">@A Complete Guide to Flexbox</a> 和 <a href="https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties" target="_blank" rel="external">@A Visual Guide to CSS3 Flexbox Properties</a>。</p>
-<p>#一、Flex布局是什么？</p>
-<hr>
-<p>###Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。</p>
-<p>###任何一个容器都可以指定为Flex布局。</p>
+<h1 id="一、Flex布局是什么？"><a href="#一、Flex布局是什么？" class="headerlink" title="一、Flex布局是什么？"></a>一、Flex布局是什么？</h1><hr>
+<h3 id="Flex是Flexible-Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。"><a href="#Flex是Flexible-Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。" class="headerlink" title="Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。"></a>Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。</h3><p>###任何一个容器都可以指定为Flex布局。</p>
 <pre><code>.box{
   display: flex;
 }    
-</code></pre><p>###行内元素也可以使用Flex布局。<br>    .box{<br>      display: inline-flex;<br>    }</p>
-<p>###Webkit内核的浏览器，必须加上-webkit前缀。</p>
-<pre><code>.box{
+</code></pre><h3 id="行内元素也可以使用Flex布局。"><a href="#行内元素也可以使用Flex布局。" class="headerlink" title="行内元素也可以使用Flex布局。"></a>行内元素也可以使用Flex布局。</h3><pre><code>.box{
+  display: inline-flex;
+}
+</code></pre><h3 id="Webkit内核的浏览器，必须加上-webkit前缀。"><a href="#Webkit内核的浏览器，必须加上-webkit前缀。" class="headerlink" title="Webkit内核的浏览器，必须加上-webkit前缀。"></a>Webkit内核的浏览器，必须加上-webkit前缀。</h3><pre><code>.box{
   display: -webkit-flex; /* Safari */
   display: flex;
 }
-</code></pre><p>###注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。</p>
-<p>#二、基本概念</p>
-<hr>
+</code></pre><h3 id="注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。"><a href="#注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。" class="headerlink" title="注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。"></a>注意，设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。</h3><h1 id="二、基本概念"><a href="#二、基本概念" class="headerlink" title="二、基本概念"></a>二、基本概念</h1><hr>
 <p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071004.png" alt="Mou"></p>
-<p>###容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。</p>
-<p>###项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。</p>
-<p>#三、容器的属性</p>
-<hr>
-<p>####以下6个属性设置在容器上。</p>
-<ul>
+<h3 id="容器默认存在两根轴：水平的主轴（main-axis）和垂直的交叉轴（cross-axis）。主轴的开始位置（与边框的交叉点）叫做main-start，结束位置叫做main-end；交叉轴的开始位置叫做cross-start，结束位置叫做cross-end。"><a href="#容器默认存在两根轴：水平的主轴（main-axis）和垂直的交叉轴（cross-axis）。主轴的开始位置（与边框的交叉点）叫做main-start，结束位置叫做main-end；交叉轴的开始位置叫做cross-start，结束位置叫做cross-end。" class="headerlink" title="容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。"></a>容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。</h3><h3 id="项目默认沿主轴排列。单个项目占据的主轴空间叫做main-size，占据的交叉轴空间叫做cross-size。"><a href="#项目默认沿主轴排列。单个项目占据的主轴空间叫做main-size，占据的交叉轴空间叫做cross-size。" class="headerlink" title="项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。"></a>项目默认沿主轴排列。单个项目占据的主轴空间叫做main size，占据的交叉轴空间叫做cross size。</h3><h1 id="三、容器的属性"><a href="#三、容器的属性" class="headerlink" title="三、容器的属性"></a>三、容器的属性</h1><hr>
+<h4 id="以下6个属性设置在容器上。"><a href="#以下6个属性设置在容器上。" class="headerlink" title="以下6个属性设置在容器上。"></a>以下6个属性设置在容器上。</h4><ul>
 <li>flex-direction</li>
 <li>flex-wrap</li>
 <li>flex-flow</li>
 <li>justify-content</li>
 <li>align-items</li>
-<li>align-content<br>###3.1 flex-direction属性</li>
+<li>align-content<h3 id="3-1-flex-direction属性"><a href="#3-1-flex-direction属性" class="headerlink" title="3.1 flex-direction属性"></a>3.1 flex-direction属性</h3></li>
 </ul>
 <hr>
 <pre><code>.box {
@@ -832,37 +803,34 @@ var duoshuoQuery = {short_name:"qianjenbo"};
 <li>column：主轴为垂直方向，起点在上沿。</li>
 <li>column-reverse：主轴为垂直方向，起点在下沿。</li>
 </ul>
-<p>###3.2 flex-wrap属性</p>
-<p>默认情况下，项目都排在一条线（又称”轴线”）上。flex-wrap属性定义，如果一条轴线排不下，如何换行。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071006.png" alt="Mou"></p>
+<h3 id="3-2-flex-wrap属性"><a href="#3-2-flex-wrap属性" class="headerlink" title="3.2 flex-wrap属性"></a>3.2 flex-wrap属性</h3><p>默认情况下，项目都排在一条线（又称”轴线”）上。flex-wrap属性定义，如果一条轴线排不下，如何换行。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071006.png" alt="Mou"></p>
 <pre><code>.box{
       flex-wrap: nowrap | wrap | wrap-reverse;
 }
 </code></pre><p>它可能取三个值。</p>
-<p>####（1）nowrap（默认）：不换行。</p>
-<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071007.png" alt="Mou"></p>
-<p>####（2）wrap：换行，第一行在上方。</p>
-<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071008.jpg" alt="Mou"></p>
+<h4 id="（1）nowrap（默认）：不换行。"><a href="#（1）nowrap（默认）：不换行。" class="headerlink" title="（1）nowrap（默认）：不换行。"></a>（1）nowrap（默认）：不换行。</h4><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071007.png" alt="Mou"></p>
+<h4 id="（2）wrap：换行，第一行在上方。"><a href="#（2）wrap：换行，第一行在上方。" class="headerlink" title="（2）wrap：换行，第一行在上方。"></a>（2）wrap：换行，第一行在上方。</h4><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071008.jpg" alt="Mou"></p>
 <p>###（3）wrap-reverse：换行，第一行在下方。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071009.jpg" alt="Mou"></p>
-<p>###3.3 flex-flow</p>
-<hr>
+<h3 id="3-3-flex-flow"><a href="#3-3-flex-flow" class="headerlink" title="3.3 flex-flow"></a>3.3 flex-flow</h3><hr>
 <pre><code>.box {
       flex-flow: &lt;flex-direction&gt; || &lt;flex-wrap&gt;;
 }
-</code></pre><p>###3.4 justify-content属性</p>
-<p>####justify-content属性定义了项目在主轴上的对齐方式。<br>    .box {<br>          justify-content: flex-start | flex-end | center | space-between | space-around;<br>    }</p>
-<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png" alt="Mou"></p>
-<p>###它可能取5个值，具体对齐方式与轴的方向有关。下面假设主轴为从左到右。</p>
-<ul>
+</code></pre><h3 id="3-4-justify-content属性"><a href="#3-4-justify-content属性" class="headerlink" title="3.4 justify-content属性"></a>3.4 justify-content属性</h3><h4 id="justify-content属性定义了项目在主轴上的对齐方式。"><a href="#justify-content属性定义了项目在主轴上的对齐方式。" class="headerlink" title="justify-content属性定义了项目在主轴上的对齐方式。"></a>justify-content属性定义了项目在主轴上的对齐方式。</h4><pre><code>.box {
+      justify-content: flex-start | flex-end | center | space-between | space-around;
+}
+</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png" alt="Mou"></p>
+<h3 id="它可能取5个值，具体对齐方式与轴的方向有关。下面假设主轴为从左到右。"><a href="#它可能取5个值，具体对齐方式与轴的方向有关。下面假设主轴为从左到右。" class="headerlink" title="它可能取5个值，具体对齐方式与轴的方向有关。下面假设主轴为从左到右。"></a>它可能取5个值，具体对齐方式与轴的方向有关。下面假设主轴为从左到右。</h3><ul>
 <li>flex-start（默认值）：左对齐</li>
 <li>flex-end：右对齐</li>
 <li>center： 居中</li>
 <li>space-between：两端对齐，项目之间的间隔都相等。</li>
 <li>space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。</li>
 </ul>
-<p>###3.5 align-items属性</p>
-<hr>
-<p>####align-items属性定义项目在交叉轴上如何对齐。<br>    .box {<br>          align-items: flex-start | flex-end | center | baseline | stretch;<br>    }</p>
-<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071011.png" alt="Mou"></p>
+<h3 id="3-5-align-items属性"><a href="#3-5-align-items属性" class="headerlink" title="3.5 align-items属性"></a>3.5 align-items属性</h3><hr>
+<h4 id="align-items属性定义项目在交叉轴上如何对齐。"><a href="#align-items属性定义项目在交叉轴上如何对齐。" class="headerlink" title="align-items属性定义项目在交叉轴上如何对齐。"></a>align-items属性定义项目在交叉轴上如何对齐。</h4><pre><code>.box {
+      align-items: flex-start | flex-end | center | baseline | stretch;
+}
+</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071011.png" alt="Mou"></p>
 <ul>
 <li>flex-start：交叉轴的起点对齐。</li>
 <li>flex-end：交叉轴的终点对齐。</li>
@@ -870,10 +838,11 @@ var duoshuoQuery = {short_name:"qianjenbo"};
 <li>baseline: 项目的第一行文字的基线对齐。</li>
 <li>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</li>
 </ul>
-<p>###3.6 align-content属性</p>
-<hr>
-<p>###align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。<br>    .box {<br>          align-content: flex-start | flex-end | center | space-between | space-        around | stretch;<br>    }</p>
-<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071012.png" alt="Mou"><br>该属性可能取6个值。</p>
+<h3 id="3-6-align-content属性"><a href="#3-6-align-content属性" class="headerlink" title="3.6 align-content属性"></a>3.6 align-content属性</h3><hr>
+<h3 id="align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。"><a href="#align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。" class="headerlink" title="align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。"></a>align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</h3><pre><code>.box {
+      align-content: flex-start | flex-end | center | space-between | space-        around | stretch;
+}
+</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071012.png" alt="Mou"><br>该属性可能取6个值。</p>
 <ul>
 <li>flex-start：与交叉轴的起点对齐。</li>
 <li>flex-end：与交叉轴的终点对齐。</li>
@@ -882,51 +851,35 @@ var duoshuoQuery = {short_name:"qianjenbo"};
 <li>space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。</li>
 <li>stretch（默认值）：轴线占满整个交叉轴。</li>
 </ul>
-<p>###4.1 order属性</p>
-<hr>
-<p>###order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。<br>    .item {<br>          order: <integer>;<br>    }</integer></p>
-<p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071013.png" alt="Mou"></p>
-<p>###4.2 flex-grow属性</p>
-<hr>
-<p>###flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。</p>
-<pre><code>.item {
+<h3 id="4-1-order属性"><a href="#4-1-order属性" class="headerlink" title="4.1 order属性"></a>4.1 order属性</h3><hr>
+<h3 id="order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。"><a href="#order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。" class="headerlink" title="order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。"></a>order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。</h3><pre><code>.item {
+      order: &lt;integer&gt;;
+}
+</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071013.png" alt="Mou"></p>
+<h3 id="4-2-flex-grow属性"><a href="#4-2-flex-grow属性" class="headerlink" title="4.2 flex-grow属性"></a>4.2 flex-grow属性</h3><hr>
+<h3 id="flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。"><a href="#flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。" class="headerlink" title="flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。"></a>flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。</h3><pre><code>.item {
       flex-grow: &lt;number&gt;; /* default 0 */
 }
 </code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071014.png" alt="Mou"></p>
-<p>#####如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。</p>
-<p>###4.3 flex-shrink属性</p>
-<p>####flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。</p>
-<pre><code>.item {
+<h5 id="如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。"><a href="#如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。" class="headerlink" title="如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。"></a>如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。</h5><h3 id="4-3-flex-shrink属性"><a href="#4-3-flex-shrink属性" class="headerlink" title="4.3 flex-shrink属性"></a>4.3 flex-shrink属性</h3><h4 id="flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。"><a href="#flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。" class="headerlink" title="flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。"></a>flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。</h4><pre><code>.item {
       flex-shrink: &lt;number&gt;; /* default 1 */
 }
 </code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071015.jpg" alt="Mou"></p>
-<p>#####如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。</p>
-<p>#####负值对该属性无效。</p>
-<p>###4.4 flex-basis属性</p>
-<hr>
-<p>####flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。</p>
-<pre><code>.item {
+<h5 id="如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。"><a href="#如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。" class="headerlink" title="如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。"></a>如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。</h5><h5 id="负值对该属性无效。"><a href="#负值对该属性无效。" class="headerlink" title="负值对该属性无效。"></a>负值对该属性无效。</h5><h3 id="4-4-flex-basis属性"><a href="#4-4-flex-basis属性" class="headerlink" title="4.4 flex-basis属性"></a>4.4 flex-basis属性</h3><hr>
+<h4 id="flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main-size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。"><a href="#flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main-size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。" class="headerlink" title="flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。"></a>flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。</h4><pre><code>.item {
       flex-basis: &lt;length&gt; | auto; /* default auto */
 }
-</code></pre><p>####它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。</p>
-<p>###4.5 flex属性</p>
-<hr>
-<p>###flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。</p>
-<pre><code>.item {
+</code></pre><h4 id="它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。"><a href="#它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。" class="headerlink" title="它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。"></a>它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。</h4><h3 id="4-5-flex属性"><a href="#4-5-flex属性" class="headerlink" title="4.5 flex属性"></a>4.5 flex属性</h3><hr>
+<h3 id="flex属性是flex-grow-flex-shrink-和-flex-basis的简写，默认值为0-1-auto。后两个属性可选。"><a href="#flex属性是flex-grow-flex-shrink-和-flex-basis的简写，默认值为0-1-auto。后两个属性可选。" class="headerlink" title="flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。"></a>flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。</h3><pre><code>.item {
       flex: none | [ &lt;&apos;flex-grow&apos;&gt; &lt;&apos;flex-shrink&apos;&gt;? || &lt;&apos;flex-basis&apos;&gt; ]
 }
-</code></pre><p>####该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。</p>
-<p>####建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。</p>
-<p>###4.6 align-self属性</p>
+</code></pre><h4 id="该属性有两个快捷值：auto-1-1-auto-和-none-0-0-auto-。"><a href="#该属性有两个快捷值：auto-1-1-auto-和-none-0-0-auto-。" class="headerlink" title="该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。"></a>该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。</h4><h4 id="建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。"><a href="#建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。" class="headerlink" title="建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。"></a>建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。</h4><p>###4.6 align-self属性</p>
 <hr>
-<p>####align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。</p>
-<pre><code>.item {
+<h4 id="align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。"><a href="#align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。" class="headerlink" title="align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。"></a>align-self属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。</h4><pre><code>.item {
       align-self: auto | flex-start | flex-end | center | baseline | stretch;
 }
 </code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071016.png" alt="Mou"></p>
-<p>####该属性可能取6个值，除了auto，其他都与align-items属性完全一致。</p>
-<p>####（完）</p>
-
+<h4 id="该属性可能取6个值，除了auto，其他都与align-items属性完全一致。"><a href="#该属性可能取6个值，除了auto，其他都与align-items属性完全一致。" class="headerlink" title="该属性可能取6个值，除了auto，其他都与align-items属性完全一致。"></a>该属性可能取6个值，除了auto，其他都与align-items属性完全一致。</h4><h4 id="（完）"><a href="#（完）" class="headerlink" title="（完）"></a>（完）</h4>
       
     </div>
     <div class="article-info article-info-index">
@@ -968,27 +921,16 @@ var duoshuoQuery = {short_name:"qianjenbo"};
 <!-- 多说公共JS代码 end -->
 
   
-    <article id="纯javascript实现html5-Canvas六种特效滤镜" class="article article-type-纯javascript实现html5" itemscope itemprop="blogPost">
+    <article id="post-Canvas六种特效滤镜" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
     
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/12/Canvas六种特效滤镜/">Canvas六种特效滤镜</a>
-    </h1>
-  
-
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#纯JavaScript实现HTML5 Canvas六种特效滤镜</p>
-<p>####纯JavaScript实现HTML5 Canvas六种特效滤镜 </p>
-<p>小试牛刀，实现了六款简单常见Html5 Canvas特效滤镜，并且封装成一个纯</p>
+        <hr>
+<h1 id="纯JavaScript实现HTML5-Canvas六种特效滤镜"><a href="#纯JavaScript实现HTML5-Canvas六种特效滤镜" class="headerlink" title="纯JavaScript实现HTML5 Canvas六种特效滤镜"></a>纯JavaScript实现HTML5 Canvas六种特效滤镜</h1><h4 id="纯JavaScript实现HTML5-Canvas六种特效滤镜-1"><a href="#纯JavaScript实现HTML5-Canvas六种特效滤镜-1" class="headerlink" title="纯JavaScript实现HTML5 Canvas六种特效滤镜"></a>纯JavaScript实现HTML5 Canvas六种特效滤镜</h4><p>小试牛刀，实现了六款简单常见Html5 Canvas特效滤镜，并且封装成一个纯</p>
 <p>JavaScript可调用的API文件gloomyfishfilter.js。支持的特效滤镜分别为：</p>
 <ol>
 <li><p>反色</p>
@@ -1004,8 +946,7 @@ var duoshuoQuery = {short_name:"qianjenbo"};
 <li><p>镜像</p>
 </li>
 </ol>
-<p>####滤镜原理解释：</p>
-<ol>
+<h4 id="滤镜原理解释："><a href="#滤镜原理解释：" class="headerlink" title="滤镜原理解释："></a>滤镜原理解释：</h4><ol>
 <li><p>反色：获取一个像素点RGB值r, g, b则新的RGB值为(255-r, 255-g, 255-b)</p>
 </li>
 <li><p>灰色调：获取一个像素点RGB值r, g, b则新的RGB值为</p>
@@ -1023,8 +964,7 @@ newb = (r * 0.393) + (g * 0.769) + (b * 0.189);
 <li><p>镜像：模拟了物体在镜子中与之对应的效果。</p>
 </li>
 </ol>
-<p>####杂项准备</p>
-<ol>
+<h4 id="杂项准备"><a href="#杂项准备" class="headerlink" title="杂项准备"></a>杂项准备</h4><ol>
 <li>如何获取Canvas 2d context对象</li>
 </ol>
 <p>var canvas = document.getElementById(“target”);</p>
@@ -1060,17 +1000,15 @@ return;
 <p>5.如何调用实现的gfilter API完成滤镜功能</p>
 <p><scriptsrc="gloomyfishfilter.js"> //导入API文件</scriptsrc="gloomyfishfilter.js"></p>
 <p>gfilter.colorInvertProcess(binaryData, len); //调用 API</p>
-<p>##效果演示：<br><img src="http://img.blog.csdn.net/20130628132241078?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvamlhMjAwMDM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="Mou"></p>
-<p>###应用程序源代码：【css】部分</p>
-<pre><code>#svgContainer {  
+<h2 id="效果演示："><a href="#效果演示：" class="headerlink" title="效果演示："></a>效果演示：</h2><p><img src="http://img.blog.csdn.net/20130628132241078?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvamlhMjAwMDM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt="Mou"></p>
+<h3 id="应用程序源代码：【css】部分"><a href="#应用程序源代码：【css】部分" class="headerlink" title="应用程序源代码：【css】部分"></a>应用程序源代码：【css】部分</h3><pre><code>#svgContainer {  
 width:800px;  
 height:600px;  
 background-color:#EEEEEE;  
 </code></pre><p>}  </p>
 <pre><code>#sourceDiv { float: left; border: 2px solid blue}   
 #targetDiv { float: right;border: 2px solid red}   
-</code></pre><p>###filter1.html中HTML源代码：【html】部分</p>
-<pre><code>&lt;!DOCTYPE html&gt;  
+</code></pre><h3 id="filter1-html中HTML源代码：【html】部分"><a href="#filter1-html中HTML源代码：【html】部分" class="headerlink" title="filter1.html中HTML源代码：【html】部分"></a>filter1.html中HTML源代码：【html】部分</h3><pre><code>&lt;!DOCTYPE html&gt;  
 &lt;html&gt;  
 &lt;head&gt;  
 &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;chrome=IE8&quot;&gt;  
@@ -1099,7 +1037,8 @@ background-color:#EEEEEE;
 &lt;/div&gt;  
 &lt;/body&gt;  
 &lt;/html&gt; 
-</code></pre><p>###filter1.html中JavaScript源代码：【javascript】<br>    var tempContext = null; // global variable 2d context<br>window.onload = function() {<br>    var source = document.getElementById(“source”);<br>    var canvas = document.getElementById(“target”);<br>    canvas.width = source.clientWidth;<br>    canvas.height = source.clientHeight;  </p>
+</code></pre><h3 id="filter1-html中JavaScript源代码：【javascript】"><a href="#filter1-html中JavaScript源代码：【javascript】" class="headerlink" title="filter1.html中JavaScript源代码：【javascript】"></a>filter1.html中JavaScript源代码：【javascript】</h3><pre><code>var tempContext = null; // global variable 2d context  
+</code></pre><p>window.onload = function() {<br>    var source = document.getElementById(“source”);<br>    var canvas = document.getElementById(“target”);<br>    canvas.width = source.clientWidth;<br>    canvas.height = source.clientHeight;  </p>
 <pre><code>if (!canvas.getContext) {  
     console.log(&quot;Canvas not supported. Please install a HTML5 compatible browser.&quot;);  
     return;  
@@ -1212,8 +1151,15 @@ var canvasData = tempContext.getImageData(0, 0, canvas.width, canvas.height);
    // Copying back canvas data to canvas  
    tempContext.putImageData(canvasData, 0, 0);  
 } 
-</code></pre><p>###滤镜源代码(gloomyfishfilter.js)：<br>        var gfilter = {<br>        type: “canvas”,<br>        name: “filters”,<br>        author: “zhigang”,<br>        getInfo: function () {<br>        return this.author + ‘ ‘ + this.type + ‘ ‘ + this.name;<br>        },  </p>
-<pre><code>/** 
+</code></pre><h3 id="滤镜源代码-gloomyfishfilter-js-："><a href="#滤镜源代码-gloomyfishfilter-js-：" class="headerlink" title="滤镜源代码(gloomyfishfilter.js)："></a>滤镜源代码(gloomyfishfilter.js)：</h3><pre><code>    var gfilter = {  
+    type: &quot;canvas&quot;,  
+    name: &quot;filters&quot;,  
+    author: &quot;zhigang&quot;,  
+    getInfo: function () {  
+    return this.author + &apos; &apos; + this.type + &apos; &apos; + this.name;  
+    },  
+
+/** 
  * invert color value of pixel, new pixel = RGB(255-r, 255-g, 255 - b) 
  *  
  * @param binaryData - canvas&apos;s imagedata.data 
@@ -1419,8 +1365,8 @@ mirrorProcess : function(context, canvasData) {
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2016/10/12/Canvas六种特效滤镜/" class="archive-article-date">
-  	<time datetime="2016-10-12T07:03:12.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-12</time>
+      <a href="/2016/11/12/Canvas六种特效滤镜/" class="archive-article-date">
+  	<time datetime="2016-11-12T07:03:12.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-12</time>
 </a>
       
       
@@ -1438,7 +1384,7 @@ mirrorProcess : function(context, canvasData) {
 
 
 <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="纯javascript实现html5-Canvas六种特效滤镜" data-title="Canvas六种特效滤镜" data-url="undefined"></div>
+    <div class="ds-thread" data-thread-key="post-Canvas六种特效滤镜" data-title="" data-url="undefined"></div>
 
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
