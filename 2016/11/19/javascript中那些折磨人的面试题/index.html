@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://yoursite.com">
+  <title>啵啵啵</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="问题一(function(){
+return typeof arguments;//&amp;quot;object&amp;quot;
+})();
+arguments是一个Array-like对象，对应的就是传入函数的参数列表。你可以在任何函数中直接使用该变量。
+typeof操作符只会返回string类型的结果。参照如下列表可知对应不同数据，typeof返回的值都是什么：
+
+
+
+类型
+结果
+
+
+
+
+undefi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="啵啵啵">
+<meta property="og:url" content="http://yoursite.com/2016/11/19/javascript中那些折磨人的面试题/index.html">
+<meta property="og:site_name" content="啵啵啵">
+<meta property="og:description" content="问题一(function(){
+return typeof arguments;//&amp;quot;object&amp;quot;
+})();
+arguments是一个Array-like对象，对应的就是传入函数的参数列表。你可以在任何函数中直接使用该变量。
+typeof操作符只会返回string类型的结果。参照如下列表可知对应不同数据，typeof返回的值都是什么：
+
+
+
+类型
+结果
+
+
+
+
+undefi">
+<meta property="og:updated_time" content="2016-11-19T06:34:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="啵啵啵">
+<meta name="twitter:description" content="问题一(function(){
+return typeof arguments;//&amp;quot;object&amp;quot;
+})();
+arguments是一个Array-like对象，对应的就是传入函数的参数列表。你可以在任何函数中直接使用该变量。
+typeof操作符只会返回string类型的结果。参照如下列表可知对应不同数据，typeof返回的值都是什么：
+
+
+
+类型
+结果
+
+
+
+
+undefi">
+  
+  
+    <link rel="icon" href="https://avatars0.githubusercontent.com/u/20942842?v=3&u=d1a97114e82a12c99a99e1cf4d13fffad7756cd7&s=140">
+  
+  <link rel="stylesheet" href="/main.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="https://avatars0.githubusercontent.com/u/20942842?v=3&amp;u=d1a97114e82a12c99a99e1cf4d13fffad7756cd7&amp;s=140" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">qianjenbo</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">Sometimes need is the courage to cross the rubicon, push yourself a forced, they knew that they have much potential!</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">homepage</a></li>
+	        
+				<li><a href="http://www.suibi8.com/">Essays</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">All📚</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">Label</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">FriendSiteList</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">About Me</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/qianjianbo" title="github">github</a>
+		        
+					<a class="weibo" target="_blank" href="http://t.qq.com/qianjianbo777?preview" title="weibo">weibo</a>
+		        
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com/" title="zhihu">zhihu</a>
+		        
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">qianjenbo</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="https://avatars0.githubusercontent.com/u/20942842?v=3&amp;u=d1a97114e82a12c99a99e1cf4d13fffad7756cd7&amp;s=140" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">qianjenbo</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">Sometimes need is the courage to cross the rubicon, push yourself a forced, they knew that they have much potential!</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">homepage</a></li>
+		        
+					<li><a href="http://www.suibi8.com/">Essays</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/qianjianbo" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://t.qq.com/qianjianbo777?preview" title="weibo">weibo</a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-javascript中那些折磨人的面试题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="问题一"><a href="#问题一" class="headerlink" title="问题一"></a>问题一</h1><pre><code>(function(){
+return typeof arguments;//&quot;object&quot;
+})();
+</code></pre><p><code>arguments</code>是一个Array-like对象，对应的就是传入函数的参数列表。你可以在任何函数中直接使用该变量。</p>
+<p><code>typeof</code>操作符只会返回<code>string</code>类型的结果。参照如下列表可知对应不同数据，<code>typeof</code>返回的值都是什么：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>undefined</td>
+<td><code>&#39;undefined&#39;</code></td>
+</tr>
+<tr>
+<td>null</td>
+<td><code>&#39;object&#39;</code></td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td><code>&#39;Boolean&#39;</code></td>
+</tr>
+<tr>
+<td>Number</td>
+<td><code>&#39;number&#39;</code></td>
+</tr>
+<tr>
+<td>String</td>
+<td><code>&#39;string&#39;</code></td>
+</tr>
+<tr>
+<td>Symbol (new in ECMAScript 2015)</td>
+<td><code>&#39;symbol&#39;</code></td>
+</tr>
+<tr>
+<td>Host object (provided by the JS environment)</td>
+<td>Implementation-dependent</td>
+</tr>
+<tr>
+<td>Function object (implements [[Call]] in ECMA-262 terms)</td>
+<td><code>&#39;function&#39;</code></td>
+</tr>
+<tr>
+<td>Any other object</td>
+<td><code>&#39;object&#39;</code></td>
+</tr>
+</tbody>
+</table>
+<pre><code>由此我们推断出，typeof arguments是object
+</code></pre><h1 id="问题二"><a href="#问题二" class="headerlink" title="问题二"></a>问题二</h1><pre><code>var f = function g(){ return 23; };
+typeof g();//报错
+</code></pre><p>这是一个名字是<code>g</code>的function expression，然后又被赋值给了变量<code>f</code>。</p>
+<p>这里的函数名<code>g</code>和被其赋值的变量<code>f</code>有如下差异：</p>
+<ul>
+<li>函数名<code>g</code>不能变动，而变量<code>f</code>可以被重新赋值</li>
+<li>函数名<code>g</code>只能在函数体内部被使用，试图在函数外部使用<code>g</code>会报错的</li>
+</ul>
+<h1 id="问题三"><a href="#问题三" class="headerlink" title="问题三"></a>问题三</h1><pre><code>(function(x){
+delete x;
+return x;//1
+})(1);
+</code></pre><p><code>delete</code>操作符可以从对象中删除属性，正确用法如下：</p>
+<pre><code>delete object.property
+delete object[&apos;property&apos;]
+</code></pre><p><code>delete</code>操作符只能作用在对象的属性上，对变量和函数名无效。也就是说<code>delete x</code>是没有意义的。</p>
+<pre><code>你最好也知道，delete是不会直接释放内存的，她只是间接的中断对象引用
+</code></pre><h1 id="问题四"><a href="#问题四" class="headerlink" title="问题四"></a>问题四</h1><pre><code>var y = 1, x = y = typeof x;
+x;//&quot;undefined&quot;
+</code></pre><p>我们试图分解上述代码成下面两步：</p>
+<pre><code>var y = 1; //step 1
+var x = y = typeof x; //step 2
+</code></pre><p>第一步应该没有异议，我们直接看第二步</p>
+<ol>
+<li>赋值表达式从右向左执行</li>
+<li><code>y</code>被重新赋值为<code>typeof x</code>的结果，也就是<code>undefined</code></li>
+<li><code>x</code>被赋值为右边表达式<code>(y = typeof x)</code>的结果，也就是<code>undefined</code></li>
+</ol>
+<h1 id="问题五"><a href="#问题五" class="headerlink" title="问题五"></a>问题五</h1><pre><code>`(function f(f){
+return typeof f();//&quot;number&quot;
+})(function(){ return 1; });
+</code></pre><p>直接上注释解释：</p>
+<pre><code>(function f(f){
+//这里的f是传入的参数function(){ return 1; }
+//执行的结果自然是1
+return typeof f(); //所以根据问题一的表格我们知道，typeof 1结果是&quot;number&quot;
+})(function(){ return 1; });
+</code></pre><h1 id="问题六"><a href="#问题六" class="headerlink" title="问题六"></a>问题六</h1><pre><code>var foo = {
+bar: function() { return this.baz; },
+baz: 1
+};
+
+(function(){
+return typeof arguments[0]();//&quot;undefined&quot;
+})(foo.bar);
+</code></pre><p>这里你可能会误以为最终结果是<code>number</code>。向函数中传递参数可以看作是一种赋值，所以<code>arguments[0]</code>得到是是真正的<code>bar</code>函数的值，而不是<code>foo.bar</code>这个引用，那么自然<code>this</code>也就不会指向<code>foo</code>，而是<code>window</code>了。</p>
+<h1 id="问题七"><a href="#问题七" class="headerlink" title="问题七"></a>问题七</h1><pre><code>var foo = {
+bar: function(){ return this.baz; },
+baz: 1
+}
+typeof (f = foo.bar)();//&quot;undefined&quot;
+</code></pre><p>这和上一题是一样的问题，<code>(f = foo.bar)</code>返回的就是<code>bar</code>的值，而不是其引用，那么<code>this</code>也就指的不是<code>foo</code>了。</p>
+<h1 id="问题八"><a href="#问题八" class="headerlink" title="问题八"></a>问题八</h1><pre><code>var f = (function f(){ return &apos;1&apos;; }, function g(){ return 2; })();
+typeof f;//&quot;number&quot;
+</code></pre><p>逗号操作符 对它的每个操作对象求值（从左至右），然后返回最后一个操作对象的值</p>
+<p>所以<code>(function f(){ return &#39;1&#39;; }</code>, <code>function g(){ return 2; })</code>的返回值就是函数<code>g</code>，然后执行她，那么结果是<code>2</code>；最后再<code>typeof 2</code>，根据问题一的表格，结果自然是<code>number</code></p>
+<p>#问题九<br>    var x = 1;<br>    if (function f(){}) {<br>    x += typeof f;<br>    }<br>    x;//“1undefined”<br>这个问题的关键点，我们在问题二中谈到过，function expression中的函数名f是不能在函数体外部访问的</p>
+<h1 id="问题十"><a href="#问题十" class="headerlink" title="问题十"></a>问题十</h1><pre><code>var x = [typeof x, typeof y][1];
+typeof typeof x;//&quot;string&quot;
+</code></pre><ol>
+<li>因为没有声明过变量<code>y</code>，所以<code>typeof</code> <code>y</code>返回”<code>undefined</code>“</li>
+<li>将<code>typeof y</code>的结果赋值给<code>x</code>，也就是说x现在是<code>&quot;undefined&quot;</code></li>
+<li>然后<code>typeof x</code>当然是<code>&quot;string&quot;</code></li>
+<li>最后<code>ypeof &quot;string&quot;</code>的结果自然还是<code>&quot;string&quot;</code></li>
+</ol>
+<h1 id="问题十一"><a href="#问题十一" class="headerlink" title="问题十一"></a>问题十一</h1><pre><code>(function(foo){
+return typeof foo.bar;//&quot;undefined&quot;
+})({ foo: { bar: 1 } });
+</code></pre><p>这是个纯粹的视觉诡计，上注释</p>
+<pre><code>(function(foo){
+
+//这里的foo，是{ foo: { bar: 1 } }，并没有bar属性哦。
+//bar属性是在foo.foo下面
+//所以这里结果是&quot;undefined&quot;
+return typeof foo.bar;
+})({ foo: { bar: 1 } });
+</code></pre><h1 id="问题十二"><a href="#问题十二" class="headerlink" title="问题十二"></a>问题十二</h1><pre><code>(function f(){
+function f(){ return 1; }
+return f();//2
+function f(){ return 2; }
+})();
+</code></pre><p>通过<code>function declaration</code>声明的函数甚至可以在声明之前使用，这种特性我们称之为<code>hoisting</code>。于是上述代码其实是这样被运行环境解释的：</p>
+<pre><code>(function f(){
+function f(){ return 1; }
+function f(){ return 2; }
+return f();
+})();
+</code></pre><h1 id="问题十三"><a href="#问题十三" class="headerlink" title="问题十三"></a>问题十三</h1><pre><code>function f(){ return f; }
+new f() instanceof f;//false
+</code></pre><p>当代码new f()执行时，下面事情将会发生：</p>
+<ol>
+<li>一个新对象被创建。它继承自<code>f.prototype</code></li>
+<li>构造函数f被执行。执行的时候，相应的传参会被传入，同时上下文<code>(this)</code>会被指定为这个新实例。<code>new f</code>等同于<code>new f()</code>，只能用在不传递任何参数的情况。</li>
+<li><p>如果构造函数返回了一个“对象”，那么这个对象会取代整个<code>new</code>出来的结果。如果构造函数没有返回对象，那么<code>new</code>出来的结果为步骤1创建的对象，</p>
+<pre><code>ps：一般情况下构造函数不返回任何值，不过用户如果想覆盖这个返回值，可以自己选择返回一个普通对象    来覆盖。当然，返回数组也会覆盖，因为数组也是对象。
+于是，我们这里的new f()返回的仍然是函数f本身，而并非他的实例
+</code></pre></li>
+</ol>
+<h1 id="问题十四"><a href="#问题十四" class="headerlink" title="问题十四"></a>问题十四</h1><pre><code>with (function(x, undefined){}) length;//2
+</code></pre><p><code>with</code>语句将某个对象添加的作用域链的顶部，如果在<code>statement</code>中有某個未使用命名空间的变量，跟作用域链中的某個属性同名，則這個变量将指向這個属性值。如果沒有同名的属性，则将拋出<code>ReferenceError</code>异常。</p>
+<p>OK，现在我们来看，由于<code>function(x, undefined){}</code>是一个匿名函数表达式，是函数，就会有<code>length</code>属性，指的就是函数的参数个数。所以最终结果就是<code>2</code>了</p>
+<p>#写在最后</p>
+<hr>
+<p>有人觉得这些题坑爹，也有人觉得开阔了眼界，见仁见智吧。但有一件事是真的，无论你是否坚定的实践派，缺了理论基础，也铁定走不远 － 你永远不会见到哪个熟练的技术工人突然成了火箭专家。</p>
+<p>看文档、读标准、结合实践，才是同志们的决胜之道</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/11/19/javascript中那些折磨人的面试题/" class="archive-article-date">
+  	<time datetime="2016-11-19T06:15:10.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-19</time>
+</a>
+      
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2016/11/16/canvas画图/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">canvas画图</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
+<!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-javascript中那些折磨人的面试题" data-title="" data-url="http://yoursite.com/2016/11/19/javascript中那些折磨人的面试题/"></div>
+
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"qianjenbo"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 qianjenbo
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/qianjianbo/">啵啵啵博客园</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/Jasonellen/">奋斗蚁博客园</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="https://jasonellen.github.io/">奋斗蚁github</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="https://yang867381349.github.io">杨军权githob</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="https://duhan96.github.io/">杜🐶</a>
+  	        
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.jianshu.com/users/926dbfef1d19/latest_articles">杜涵简书</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">姓名:qianjenbo&lt;br/&gt;年龄:94.09.18&lt;br/&gt;性别:男&lt;br/&gt;座右铭:有时候缺的就是破釜沉舟的勇气，把自己逼一逼，才知道自己有多大潜力！&lt;br/&gt;</div>
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+</body>
+</html>
